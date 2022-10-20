@@ -1,56 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="@color/white"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/editWeight"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
         android:ems="10"
-        android:hint="Enter your Weight"
-        android:inputType="number" />
+        android:hint="@string/enter_your_weight"
+        android:inputType="number"
+        android:fontFamily="@font/poppins"
+        android:background="#80F4F4F4"
+        android:padding="12dp"
+        android:textSize="@dimen/normal_text"
+        android:textColor="@color/dark_pink"
+        app:layout_constraintBottom_toTopOf="@+id/editHeightFeet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 
     <EditText
         android:id="@+id/editHeightFeet"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
         android:ems="10"
-        android:hint="Enter your Height (feet)"
-        android:inputType="number" />
+        android:hint="@string/enter_your_height_feet"
+        android:inputType="number"
+        android:fontFamily="@font/poppins"
+        android:textSize="@dimen/normal_text"
+        android:background="#80F4F4F4"
+        android:padding="12dp"
+        android:textColor="@color/dark_pink"
+        app:layout_constraintBottom_toTopOf="@+id/editHeightInch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editWeight"
+        app:layout_constraintVertical_bias="0.5" />
 
     <EditText
         android:id="@+id/editHeightInch"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
         android:ems="10"
-        android:hint="Enter your Weight (inch)"
-        android:inputType="number" />
+        android:hint="@string/enter_your_weight_inch"
+        android:inputType="number"
+        android:fontFamily="@font/poppins"
+        android:background="#80F4F4F4"
+        android:padding="12dp"
+        android:textSize="@dimen/normal_text"
+        android:textColor="@color/dark_pink"        app:layout_constraintBottom_toTopOf="@+id/button_calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editHeightFeet"
+        app:layout_constraintVertical_bias="0.5" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_calculate"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:backgroundTint="#E91E63"
-        android:text="Calculate BMI" />
+        android:backgroundTint="@color/dark_pink"
+        android:padding="12dp"
+        android:textSize="@dimen/large_text"
+        android:text="@string/calculate_bmi"
+        app:cornerRadius="24dp"
+        android:fontFamily="@font/poppins"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editHeightInch"
+        app:layout_constraintVertical_bias="0.5" />
 
     <TextView
         android:id="@+id/textResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="textStart"
-        android:layout_margin="12dp"
         android:text="Result : "
-        android:textSize="21sp"
-        android:textStyle="bold" />
+        android:textAlignment="textStart"
+        android:textSize="@dimen/large_text"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_calculate"
+        app:layout_constraintVertical_bias="0.5" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
