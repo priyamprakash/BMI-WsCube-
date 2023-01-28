@@ -55,7 +55,7 @@
         android:background="#80F4F4F4"
         android:ems="10"
         android:fontFamily="@font/poppins"
-        android:hint="@string/enter_your_weight_inch"
+        android:hint="@string/enter_your_height_inch"
         android:inputType="number"
         android:padding="12dp"
         android:textColor="@color/dark_pink"
